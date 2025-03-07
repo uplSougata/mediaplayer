@@ -105,7 +105,7 @@ class MediaPlayerViewModel(application: Application) : AndroidViewModel(applicat
         val request = DownloadManager.Request(Uri.parse(url))
             .setTitle("Downloading media")
             .setDestinationUri(Uri.fromFile(file))
-            .setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN)
+            .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
 
         val downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         val downloadId = downloadManager.enqueue(request)
